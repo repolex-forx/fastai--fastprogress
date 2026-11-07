@@ -8,7 +8,7 @@
     {
       "@id": "https://repolex.ai/r/fastai/fastprogress/commit/4e87543afa180d1ae011089f6ad0e690ba57d235",
       "git:hexsha": "4e87543afa180d1ae011089f6ad0e690ba57d235",
-      "repolex:parseStatus": "metadata_complete"
+      "repolex:parseStatus": "ast_complete"
     },
     {
       "@id": "https://repolex.ai/r/fastai/fastprogress/commit/e1951c2ae02d63a15c65130f4a406e3fcf4d52df",
