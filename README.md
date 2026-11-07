@@ -1,1 +1,167 @@
-Initializing
+# Repolex Knowledge Graph of fastai/fastprogress
+
+RDF knowledge graph data for [fastai/fastprogress](https://github.com/fastai/fastprogress), parsed by [repolex](https://repolex.ai).
+
+> **Note**: This data is experimental and subject to change without notice.
+
+## How to use this data
+
+The easiest way to get started is to install the [rlex](https://github.com/repolex-ai/rlex) query tool:
+
+```bash
+cargo install --git https://github.com/repolex-ai/rlex
+```
+
+Verify the install:
+
+```bash
+rlex --help
+```
+
+**rlex is designed to be used primarily by LLMs in a terminal.** Start up your favorite AI assistant and ask it to use rlex. It handles the SPARQL — you just ask questions in plain English.
+
+To load this repo's data:
+
+```bash
+rlex download fastai/fastprogress
+```
+
+Consult `rlex --help` for other options, including SPARQL queries, HTTP server, and interactive visualization.
+
+## Data structure
+
+All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) (`.nq.gz`), a standard RDF format that can be loaded into any triplestore or graph database.
+
+```
+.
+├── aggregate
+│   ├── ast
+│   │   └── 4e87543afa180d1ae011089f6ad0e690ba57d235
+│   │       └── chunk-001.nq.gz
+│   └── repolex
+│       └── 4e87543afa180d1ae011089f6ad0e690ba57d235
+│           └── chunk-001.nq.gz
+├── blob
+│   ├── 08ca6f0295bf9267c15bcc6d651e510decde8f87.nq.gz
+│   ├── 0b1fcd221aadacb3d81e13b07a490f9ac0e1894c.nq.gz
+│   ├── 0e86928af53d03b1c8a2e209374bb61e68175eb9.nq.gz
+│   ├── 0f2e1e6db35ae1e6d1e0996024397de8247be522.nq.gz
+│   ├── 12b9856388f4d2e95b7e86730300cdf4ec2c1972.nq.gz
+│   ├── 133b17eb9535e9cb244b567437e386f8767c1ab6.nq.gz
+│   ├── 1413fc609ab6f21774de0cb7e01360095584f65b.nq.gz
+│   ├── 157e1622b008ba4aa5b9e8aae6949d66db18e974.nq.gz
+│   ├── 1c2829c4c1f611e7286b9605316381cd7935add2.nq.gz
+│   ├── 1db42d022a5a2fb06920736360513d66d0230da5.nq.gz
+│   ├── 1e651cf79db8253e56e236c4592b19902a71c8f9.nq.gz
+│   ├── 21e88dc044bf21d43d4889d0e667cf5274103fcf.nq.gz
+│   ├── 27701a35d6bcb950e53a9608a1ba177f74f1ae8d.nq.gz
+│   ├── 2c6ab31ef3daae553dd62205401c81c29fefa723.nq.gz
+│   ├── 34e584e6a09514b7328b7fb8dabf89141283e639.nq.gz
+│   ├── 35acda2fa1196aad98c2adf4378a7611dd713aa3.nq.gz
+│   ├── 38a04d6c4e8bc6480ab557d57eb429c340b240e6.nq.gz
+│   ├── 3eaec277a12590f114d704c625a9804f528121c6.nq.gz
+│   ├── 400014a4b06eee3d0c0d54402a47ab2601b2862b.nq.gz
+│   ├── 401ec0f36e4f73b8efa40bd6f604fe80d286db70.nq.gz
+│   ├── 40c12f2d23e712757a686be272ddd6a5a128db14.nq.gz
+│   ├── 4991586b5a60fa9d26b0a465a7ea12e20d79d7d5.nq.gz
+│   ├── 4a2b4fde212c066fbeb6d1e43f7e032fe57925da.nq.gz
+│   ├── 4ba75bc36d756c5102c502d2eeb2758b76c0a7b1.nq.gz
+│   ├── 4cc1ab88d7d5ae8b95ea237a1372ee416d62f8ad.nq.gz
+│   ├── 4d13fc60404b91e398a37200c4a77b645cfd9586.nq.gz
+│   ├── 50ca1b733ca6301b52d182b65477d81000bef4fa.nq.gz
+│   ├── 517adebb7a80f6306ab17a729992ceaf0491c363.nq.gz
+│   ├── 525de3644946e73ef17255483c05a6883d0a68ce.nq.gz
+│   ├── 57510a2be4e3c97b34624a5d0966b97421692034.nq.gz
+│   ├── 628b6a52a87e62c6f22426e17c01f6a303aa194e.nq.gz
+│   ├── 64539b54c3751a6d9adb44c8e3a45ba5a73b77f0.nq.gz
+│   ├── 64d0f6310112a223d89cbeb956fd0f988e7b2aca.nq.gz
+│   ├── 6fc1fed3033cbea3c629bba97536a36cf92548ca.nq.gz
+│   ├── 7620f5ac52a269c078bba2ca784f7e0d5fb99a64.nq.gz
+│   ├── 77b841477ac2c3f8c5595324323dd7e251d18fc9.nq.gz
+│   ├── 7853ec711dc3e0cf0dafaef85708f4f372558151.nq.gz
+│   ├── 7c44cd251379d4e5ece94b526ebaf81685220e98.nq.gz
+│   ├── 7e103315e1af3fa85dca01b686b318d45adcf0a9.nq.gz
+│   ├── 7fdefc390326f80bf5059b61b165b24d3e500f44.nq.gz
+│   ├── 8027c8273f229d2f5db35915a8fb4dcde6e085a8.nq.gz
+│   ├── 810ba8d30ede4ad02f08f2b713d8f902489bf136.nq.gz
+│   ├── 81a2ce1c9371b5bff7ae08c9646045447f8dbf14.nq.gz
+│   ├── 81c9ad949b47f64afeca5642ee2494b6e3147f44.nq.gz
+│   ├── 84677bc0c5f37f1fac9d87548c4554b5c91717cf.nq.gz
+│   ├── 855c845e538b65548118279537a04eab2ec6ef0d.nq.gz
+│   ├── 87e1c61aeb468999b468704ea13e6f655ac167e1.nq.gz
+│   ├── 8ad8915881ca25e0b261e50fc9888b28d12dd000.nq.gz
+│   ├── 8b137891791fe96927ad78e64b0aad7bded08bdc.nq.gz
+│   ├── 8dcb318067c9c88e6d8df49b00f829222cb29da7.nq.gz
+│   ├── 91a3e816183d8ec1c986cd042623e34845bef599.nq.gz
+│   ├── 920306970d6cc395bba3b06f47742d2dfa3e4920.nq.gz
+│   ├── 94fb5490a2ed10b2c69a4a567a4fd2e4f706d841.nq.gz
+│   ├── 96a3639cdde5e8ab459c6380e3b9524ee81641dc.nq.gz
+│   ├── 9b1c3ad1cf8c6ff2048993a6fe4473788fa9fd32.nq.gz
+│   ├── 9d0701f66be77172c48bf7b24ed72688f76bf5a0.nq.gz
+│   ├── 9e612858f802245ddcbf59788a0db942224bab35.nq.gz
+│   ├── a2b27bf92726ac87f7d9a0315429fd86f2f37e2b.nq.gz
+│   ├── a5511771009a962006d4af4c13e7e00d24f276e3.nq.gz
+│   ├── b0323c5cdf05a6fda2d02456695021dea2f96700.nq.gz
+│   ├── b5244bb0b0319cd60449ef26aa80ad628c90a7cf.nq.gz
+│   ├── b93a4953fff68df523aa7656497ee339d6026d64.nq.gz
+│   ├── b945eae422b8c341dfc88e3064fadd51025f2f8f.nq.gz
+│   ├── ba72bf86e34f4597396c0276ca2a59350b92b2f0.nq.gz
+│   ├── baa55fe130619da3f39966e8cf00474c4e72471d.nq.gz
+│   ├── bf54275c457acee1aef8b20b2479d90ac9ec51ba.nq.gz
+│   ├── c08066ee3361be0b99973e8a87ad95ad860dd65b.nq.gz
+│   ├── c27e149464f2271f14122e3074929c5a6fb59de7.nq.gz
+│   ├── c35e9559b4e6acfa92f949143985c89b9c823784.nq.gz
+│   ├── c989b3923c9b8710f7b448f5f0fdac05af021574.nq.gz
+│   ├── d368018d6eb1eec3560d8d28dfefd35b2a0a1d7a.nq.gz
+│   ├── d4aa73215694b32c3b75b22d4b62cdc71cfb8b71.nq.gz
+│   ├── d884a244e4aa0e342626627baaa77780c69c4eae.nq.gz
+│   ├── d8d6ac999d664fefba1208e66e5d850d2d41fb40.nq.gz
+│   ├── d907b25ae60ec7e3d32e4027aa6e6b7595de97af.nq.gz
+│   ├── dd58d0c19b85e722f7aea16171b1b079684f9857.nq.gz
+│   ├── e13067ac356ebf41550609b6499eef60eea64eff.nq.gz
+│   ├── e39ac9e3cae4133324a64515d7911c08f02eb3c9.nq.gz
+│   ├── e61e28ce0d2c9759a2b84d666a55044c2265542f.nq.gz
+│   ├── e69de29bb2d1d6434b8b29ae775ad8c2e48c5391.nq.gz
+│   ├── e7331adaf854e7dd4dc96290409e5a2ee9329140.nq.gz
+│   ├── e9f60ca953f93e35eab4108bd414bc02ddcf3928.nq.gz
+│   ├── ebb8f3fb735404ceeaf8bb25f132da7f83b0c83d.nq.gz
+│   ├── ed836db266fbbe3f601de15bde83af3312d2b9d7.nq.gz
+│   ├── f12ae626e8cd36923a1026bee0027d37d9ce2b36.nq.gz
+│   ├── f20eac1760edf24788c02b4a544ed6900a6777c4.nq.gz
+│   ├── f2468d7612dc4b3fab7848415e3fc7e8fd9c48a2.nq.gz
+│   └── f2c59d5fc8efa6b966de0836566689bed7872277.nq.gz
+├── branch
+│   └── branch.nq.gz
+├── commit
+│   └── commit.nq.gz
+├── filetree
+│   └── 4e87543afa180d1ae011089f6ad0e690ba57d235.nq.gz
+├── issue
+│   └── issue.nq.gz
+├── pr
+│   └── pr.nq.gz
+└── tag
+    └── tag.nq.gz
+
+13 directories, 96 files
+```
+
+| Directory | What it contains |
+|-----------|-----------------|
+| `blob/` | Per-file AST graphs, content-addressed by git blob SHA. Each file in the source repo gets its own graph. |
+| `aggregate/ast/` | Combined AST graph per parsed commit. Merges all blob graphs for a snapshot of the entire codebase at that point. |
+| `aggregate/lsp/` | Language Server Protocol enrichment: resolved symbols, definitions, references, and type information. |
+| `aggregate/dataflow/` | Interprocedural data flow edges between functions and modules. |
+| `aggregate/repolex/` | Combined graph (AST + LSP + dataflow) per commit. |
+| `commit/` | Git commit metadata (author, date, message, parent links). |
+| `branch/` | Branch metadata. |
+| `tag/` | Tag metadata. |
+| `filetree/` | File tree snapshots per commit (which files existed and their blob SHAs). |
+| `audit/` | Code architecture and graph audit reports per commit. |
+
+## Source repository
+
+[fastai/fastprogress](https://github.com/fastai/fastprogress)
+
+---
+*Parsed on 2026-11-07 by [repolex](https://repolex.ai)*
